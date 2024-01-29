@@ -16,7 +16,6 @@ add.onblur = function (e) {
     let element = ch[i];
     let mySpan = document.createElement("span");
     mySpan.textContent = element.toLowerCase();
-    // cDiv.className = add.value;
     cDiv.classList.add(ch[i]);
     listDiv.appendChild(mySpan);
   }
@@ -29,9 +28,10 @@ remove.onblur = function (e) {
       continue;
     }
     for (let i = 0; i < listDiv.children.length; i++) {
-      if (del[x] === listDiv.children[i].textContent)
+      if (del[x] === listDiv.children[i].textContent) {
         listDiv.children[i].remove();
         cDiv.classList.remove(del[x]);
+      }
     }
   }
   remove.value = "";
