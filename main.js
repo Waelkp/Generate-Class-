@@ -18,15 +18,12 @@ add.onblur = function (e) {
     mySpan.textContent = element.toLowerCase();
     // cDiv.className = add.value;
     cDiv.classList.add(ch[i]);
-    console.log(cDiv.classList);
     listDiv.appendChild(mySpan);
   }
   add.value = "";
 };
 remove.onblur = function (e) {
   let del = remove.value.toLowerCase().split(" "); // make array
-  console.log(listDiv.children);
-  console.log(del);
   for (let x = 0; x < del.length; x++) {
     if (del[x] == "") {
       continue;
@@ -34,7 +31,7 @@ remove.onblur = function (e) {
     for (let i = 0; i < listDiv.children.length; i++) {
       if (del[x] === listDiv.children[i].textContent)
         listDiv.children[i].remove();
-      // cDiv.classList.remove(del[x]);
+        cDiv.classList.remove(del[x]);
     }
   }
   remove.value = "";
